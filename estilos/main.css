@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.drag-rotate {
+    transform: rotate(0);
+    transform-origin: center center;
+    user-select: none;
+    touch-action: none;
+}
