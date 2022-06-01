@@ -5,15 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <title>CR3</title>
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body>
-    <img src="img/LADO_A_BASE.png" alt="" class="drag-rotate">
-    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-    <script src="/js/script.js"></script>
+    <div class="container">
+        <button id="trocar_lado">Trocar Lado</button>
+        <div id="ladoA">
+            <img src="img/LADO_A_BASE.png" alt="" class="base" id="ladoABase">
+            <img src="img/LADO_A_DISCO.png" alt="" class="rotacionavel" id="ladoA1">
+            <!-- <img src="img/LADO_A_CURSOR.png" alt="" class="rotacionavel" id="ladoACursor"> -->
+        </div>
+        <div id="ladoB" hidden>
+            <img src="img/LADO_B_BASE.png" alt="" class="base" id="ladoBBase" angulo="0">
+            <img src="img/LADO_B_DISCO-1.png" alt="" class="rotacionavel" id="ladoB1">
+            <canvas id="ladoB2" oncontextmenu="event.preventDefault();"></canvas>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
