@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#cr3 {
+    height: 100vmin;
+    width: 100vmin;
+    position: relative;
+}
+
+#interface{
+    width: 400px;
+    background-color: brown;
+}
+
+.base {
+    width: 100vmin;
+}
+
+.rotacionavel {
+    border-radius: 50%;
+}
+
+#ladoA1 {
+    width: 86vmin;
+    top: 7vmin;
+    left: 7vmin;
+}
+
+#ladoB1 {
+    width: 90vmin;
+    top: 5vmin;
+    left: 5vmin;
+}
+
+#ladoB2 {
+    position: absolute;
+    width: 76vmin;
+    height: 76vmin;
+    top: 12vmin;
+    left: 12vmin;
+    border-radius: 50%;
+}
+
+img {
+    position: absolute;
+}
+
+#trocar_lado {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 99;
+}
