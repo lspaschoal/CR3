@@ -43,6 +43,19 @@ let adicionaEfeitoRotacao = objeto => {
         anguloInicial = (180 / Math.PI) * Math.atan2(e.clientY - centro.y, e.clientX - centro.x);
         return ativo = true;
     }, false);
+    
+    objeto.elemento.addEventListener("touchstart", e => {
+        e.preventDefault();
+        let referencia = objeto.elemento.getBoundingClientRect();
+        let topo = referencia.top,
+            esquerda = referencia.left,
+            altura = referencia.height,
+            largura = referencia.width;
+        centro.x = esquerda + (largura / 2);
+        centro.y = topo + (altura / 2);
+        anguloInicial = (180 / Math.PI) * Math.atan2(e.clientY - centro.y, e.clientX - centro.x);
+        return ativo = true;
+    }, false)
 
     objeto.elemento.addEventListener("mousemove", e => {
         let d, x, y;
@@ -63,8 +76,33 @@ let adicionaEfeitoRotacao = objeto => {
             return objeto.elemento.style.transform = "rotate(" + objeto.angulo + "deg)";
         }
     }, false);
+    
+    objeto.elemento.addEventListener("touchmove", e => {
+        let d, x, y;
+        e.preventDefault();
+        x = e.clientX - centro.x;
+        y = e.clientY - centro.y;
+        d = (180 / Math.PI) * Math.atan2(y, x);
+        rotacao = d - anguloInicial;
+        if (ativo) {
+            objeto.angulo = angulo + rotacao
+            if (objeto === baseA) {
+                discoA.elemento.style.transform = "rotate(" + (discoA.angulo + objeto.angulo) + "deg)";
+            }
+            if (objeto === baseB) {
+                discoB1.elemento.style.transform = "rotate(" + (discoB1.angulo + objeto.angulo) + "deg)";
+                discoB2.elemento.style.transform = "rotate(" + (discoB2.angulo + objeto.angulo) + "deg)";
+            }
+            return objeto.elemento.style.transform = "rotate(" + objeto.angulo + "deg)";
+        }
+    }, false);
 
     objeto.elemento.addEventListener("mouseup", e => {
+        angulo += rotacao;
+        return ativo = false;
+    }, false);
+    
+    objeto.elemento.addEventListener("touchend", e => {
         angulo += rotacao;
         return ativo = false;
     }, false);
