@@ -11,6 +11,10 @@ const discoA = {
     elemento: document.getElementById('ladoA1'),
     angulo: 0
 };
+const cursor = {
+    elemento: document.getElementById('ladoACursor'),
+    angulo: 0
+};
 const discoB1 = {
     elemento: document.getElementById('ladoB1'),
     angulo: 0
@@ -109,6 +113,7 @@ let adicionaEfeitoRotacao = objeto => {
 }
 adicionaEfeitoRotacao(baseA);
 adicionaEfeitoRotacao(discoA);
+adicionaEfeitoRotacao(cursor);
 adicionaEfeitoRotacao(baseB);
 adicionaEfeitoRotacao(discoB1);
 adicionaEfeitoRotacao(discoB2);
