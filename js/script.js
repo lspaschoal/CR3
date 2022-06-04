@@ -183,6 +183,4 @@ window.addEventListener('resize', () => {
 function resizeCanvas(){
     discoB2.elemento.width = Math.min(window.innerHeight, window.innerWidth) * 0.76;
     discoB2.elemento.height = discoB2.elemento.width;
-    // discoB2.elemento.height = discoB2.elemento.style.width = discoB2.elemento.style.height = discoB2.elemento.width;
-    console.log('resizeCanvas()');
 }
