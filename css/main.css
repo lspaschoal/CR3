@@ -36,6 +36,13 @@
     left: 7vmin;
 }
 
+#ladoACursor {
+    width: 23vmin;
+    top: 0;
+    left: 39vmin;
+    transform-origin: bottom;
+}
+
 #ladoB1 {
     width: 90vmin;
     top: 5vmin;
